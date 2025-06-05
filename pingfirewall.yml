@@ -1,6 +1,14 @@
 - name: Ping the firewall
   hosts: firewall
   gather_facts: no
+  collections: 
+    - fortinet.fortios
   tasks:
-    - name: Ping using Ansible
-      ansible.builtin.ping:
+    - name: Get system interface info (as a test)
+      fortios_system_interface:
+        vdom: "root"
+        state: "present"
+      register: result
+
+    - debug:
+        var: result
