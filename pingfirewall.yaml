@@ -1,0 +1,6 @@
+- name: Ping the firewall
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ping using Ansible
+      ansible.builtin.ping:
