@@ -1,5 +1,5 @@
 - name: Ping the firewall
-  hosts: all
+  hosts: firewall
   gather_facts: no
   tasks:
     - name: Ping using Ansible
