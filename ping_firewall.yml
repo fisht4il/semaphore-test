@@ -1,4 +1,5 @@
 - hosts: fortigate01
+  gather_facts: no
   connection: httpapi
   collections:
   - fortinet.fortios
