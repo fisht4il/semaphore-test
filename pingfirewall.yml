@@ -1,5 +1,5 @@
 - name: Test connection to FortiGate API
-- hosts: fortigates
+  hosts: fortigates
   collections:
     - fortinet.fortios
   connection: httpapi
