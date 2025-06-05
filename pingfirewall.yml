@@ -1,11 +1,12 @@
 - name: Test connection to FortiGate API
   hosts: fortigates
+  connection: httpapi
   collections:
     - fortinet.fortios
-  connection: httpapi
+  gather_facts: no
   tasks:
     - name: Get system interface info
       fortios_system_interface:
         state: present
         system_interface:
-          name: "port1"
+          name: port1
