@@ -1,17 +1,13 @@
 - name: Ping FortiGate firewall
   hosts: fortigates
   connection: httpapi
-  gather_facts: no
   collections:
     - fortinet.fortios
+  gather_facts: no
   tasks:
     - name: Get port1 interface info
       fortios_system_interface:
-        vdom: "root"
-        https: false
-        host: "{{ inventory_hostname }}"
-        username: "{{ ansible_user }}"
-        password: "{{ ansible_password }}"
         state: present
+        vdom: "root"
         system_interface:
-          name: "port1"
+          name: port1
