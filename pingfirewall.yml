@@ -1,12 +1,16 @@
-- name: Ping the firewall
-  hosts: firewall
-  gather_facts: no
-  collections: 
+- name: Test connection to FortiGate API
+  hosts: localhost
+  connection: local
+  collections:
     - fortinet.fortios
   tasks:
-    - name: Get system interface info (as a test)
+    - name: Get system interface info
       fortios_system_interface:
-        vdom: "root"
+        host: "{{ fortios_host }}"
+        username: "{{ fortios_username }}"
+        password: "{{ fortios_password }}"
+        https: true
+        vdom: "{{ fortios_vdom }}"
         state: "present"
       register: result
 
